@@ -1,0 +1,25 @@
+<div class="container contain">
+    <nav (click)="toggleClass()" class="nav nav-pills nav-justified">
+        <span class="nav-item nav-link navbar-link-fiche col" [routerLinkActive]="['active']" [routerLink]="['../fiche/profil']">Profil</span>
+
+         <div [className]="adminIsActivated" class="nav-item nav-link navbar-link-fiche dropdown-toggle dropdown show col">
+            <span class="" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administration</span>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <span [routerLink]="['administration/admission']" [routerLinkActive]="['active']" class="dropdown-item">Admission</span>
+                <span [routerLink]="['administration/durant']" [routerLinkActive]="['active']" class="dropdown-item">Durant le séjour</span>
+                <span [routerLink]="['administration/sortie']" [routerLinkActive]="['active']" class="dropdown-item">Sortie</span>
+            </div>
+        </div>
+
+        <div [className]="santeIsActivated" class="nav-item nav-link navbar-link-fiche dropdown-toggle dropdown show col">
+                <span class="" id="dropdown-menu-sante" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Santé/Psychologie</span>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <span [routerLink]="['sante/physique']" [routerLinkActive]="['active']" class="dropdown-item">Santé physique</span>
+                    <span [routerLink]="['sante/psy']" [routerLinkActive]="['active']" class="dropdown-item">Santé psychologique</span>
+                </div>
+            </div>
+        <span class="nav-item nav-link navbar-link-fiche col" [routerLinkActive]="['active']" [routerLink]="['../fiche/education']">Education</span>
+        <span class="nav-item nav-link navbar-link-fiche col" [routerLinkActive]="['active']" [routerLink]="['../fiche/juridique']">Juridique</span>
+        <span class="nav-item nav-link navbar-link-fiche col" [routerLinkActive]="['active']" [routerLink]="['../fiche/foyer']">Foyer</span>
+    </nav>
+</div>

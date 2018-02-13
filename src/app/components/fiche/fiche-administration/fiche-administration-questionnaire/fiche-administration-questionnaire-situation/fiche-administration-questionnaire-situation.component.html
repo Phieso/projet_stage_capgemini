@@ -1,0 +1,93 @@
+<div class="container">
+    <section class="admission-arrivee">
+        <header class="row">
+            <h3>Situation administrative à l'arrivée</h3>
+        </header>
+
+        <form action="" method="post" class="admission-arrivee-form">
+            <div class="row admission-arrivee-form-situation">
+               <fieldset>
+                    <label for="situation">Situation : </label>
+                    <input type="radio" name="situation" id="reguliere" value="reguliere">
+                    <label for="reguliere">Régulière</label>
+                    <input type="radio" name="situation" id="irreguliere" value="irreguliere">
+                    <label for="irreguliere">Irrégulière</label>
+                    <input type="radio" name="situation" id="en-cours" value="en-cours">
+                    <label for="en-cours">En cours de régularisation</label>
+               </fieldset>
+            </div>
+
+            <div class="row admission-arrivee-form-document">
+                <fieldset>
+                    <label for="document">Document d'identité :</label>
+                    <input type="checkbox" name="document" id="cni" value="cni">
+                    <label for="cni">CNI</label>
+                    <input type="radio" name="document" id="passeport" value="passeport">
+                    <label for="passeport">Passeport</label>
+                    <input type="radio" name="document" id="titre" value="titre">
+                    <label for="titre">Titre de séjour</label>
+                    <input type="radio" name="document" id="aucun" value="aucun">
+                    <label for="aucun">Aucun</label>
+                    <input type="radio" name="document" id="autre" value="autre">
+                    <label for="autre">Autre :</label>
+                    <input type="text" name="document" id="autre">
+                </fieldset>
+            </div>
+
+            <div class="row admission-arrivee-form-domiciliation">
+                <fieldset>
+                    <label for="domiciliation">Domiciliation :</label>
+                    <input type="text" name="domiciliation" id="domiciliation">
+                </fieldset>
+            </div>
+
+            <div class="row admission-arrivee-form-nationalite">
+                <fieldset>
+                    <label for="nationalite">Nationalité :</label>
+                    <input type="text" name="nationalite" id="nationalite">
+                </fieldset>
+            </div>
+
+            <div class="row admission-arrivee-form-numeroSS">
+                <fieldset>
+                    <label for="numeroSS">Numéro de Sécurité Sociale :</label>
+                    <input type="text" name="numeroSS" id="numeroSS">
+                    <label for="carte-vitale">Carte Vitale :</label>
+                    <input type="radio" name="asile" id="carte-vitale-oui" value="true">
+                    <label for="carte-vitale-oui">Oui</label>
+                    <input type="radio" name="asile" id="carte-vitale-non" value="false">
+                    <label for="carte-vitale-non">Non</label>
+                </fieldset>
+            </div>
+
+            <div class="row admission-arrivee-form-asile">
+                <fieldset>
+                    <label for="asile">Procédure d'asile :</label>
+                    <input type="radio" name="asile" id="asile-oui" value="true">
+                    <label for="asile-oui">Oui</label>
+                    <input type="radio" name="asile" id="asile-non" value="false">
+                    <label for="asile-non">Non</label>
+                    <label for="reguliere">Si oui, étapes réalisées</label>
+                    <textarea name="asile" id="asile-etapes" cols="50" rows="5"></textarea>
+                </fieldset>
+            </div>
+
+            <br>
+
+            <div class="row admission-arrivee-form-confirm">
+                <fieldset>
+                    <label for="confirm">ADMISSION :</label>
+                    <input type="radio" name="confirm" id="confirm-oui" value="true">
+                    <label for="confirm-oui">Oui</label>
+                    <input type="radio" name="confirm" id="confirm-non" value="false">
+                    <label for="confirm-non">Non</label>
+                    <label for="confirm">Entretien par :</label>
+                    <input type="text" name="confirm-who" id="confirm-who">
+                    <label for="confirm-date">A la date du :</label>
+                    <input type="date" name="confirm-date" id="confirm-date">
+                </fieldset>                        
+            </div>
+        </form>
+
+    </section>
+</div>

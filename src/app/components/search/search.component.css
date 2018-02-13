@@ -1,0 +1,25 @@
+a {
+    height: 24px;
+    color: white;
+}
+
+.btn:hover {
+    width: 50px;
+    background-color: black;
+    color: #c0c0c0;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+}
+
+.input-group-append:hover a {
+    
+}
+
+.container {
+    position: relative;
+}
+
+#searchbar {
+    justify-content: center;
+}

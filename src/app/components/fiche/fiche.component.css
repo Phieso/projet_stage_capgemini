@@ -1,0 +1,135 @@
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container{
+    justify-content: center;
+    margin-top: 2.2em;
+}
+
+fieldset{
+    padding: 15px 60px;
+    padding-bottom: 2rem;
+    margin: 0 40px;
+    border: 2px solid #757474;
+    border-radius: 0.4em;   
+}
+
+fieldset fieldset {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    fieldset {
+        padding: 15px 10px;
+    }
+}
+
+legend {
+    width: auto;
+    text-align: left;
+    margin: 0 1em;
+    padding: 0 1em;
+    color: #383838;
+}
+
+div {
+    margin-bottom: 0px;
+}
+div.custom-radio {
+    margin: 0px;
+    padding-top: 0px;
+}
+label.custom-control-label {
+    margin-top: 0px;
+}
+
+div.radioButtons{
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+label{
+    margin: 10px 0px 2px 0px;
+}
+
+.selectChoix {
+    font-style: italic;
+    color: #555;
+}
+
+select, input, textarea {
+    margin: 0 auto;
+}
+
+.btn-plus {
+    border-radius: 10px;
+    margin-top: 5px;
+    border: none;
+}
+
+.btn-historique {
+    margin: 40px 0;
+    border-radius: 25px;
+    /* margin-top: 5px; */
+    border: none;
+    font-family: sans-serif;
+}
+
+.btn-dark {
+    border-radius: 10px;
+    margin-top: 20px;
+    border: none;
+    padding: 20px 40px;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.justify-content-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contratsCols {
+    border: 1px solid grey;
+    padding: 0;
+}
+
+.divtableau {
+    padding: 0 10px;
+    text-align: center;
+}
+
+.contratsCols>label {
+    margin: 6px 0;
+}
+
+.datepickNoBorder {
+    border: none;
+    text-align: center;
+    width: 218px;
+}
+
+.intitule_contrat {
+    border: none;
+    padding: 0px;
+    width: 440px;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+hr {
+    border-top: solid 1px darkgrey;
+}
+
+.btn_uni {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

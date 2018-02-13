@@ -1,0 +1,573 @@
+<div class="container">
+    <section class="profil title">
+        <header class="row">
+            <h2>PROFIL</h2>
+        </header>
+    </section>
+    
+    <form *ngIf="dataLoaded">
+      <section id="infosAdministratives" class="container">
+        <fieldset id="cadreInfosAdmin">
+          <legend>Informations Administratives</legend>
+          <div class="form-group row">
+            <div class="form-group col-4">
+              <label for="nom">Nom</label>
+              <input type="text" [(ngModel)]="profil.lastName"  name="lastName" class="form-control" id="nom" placeholder="">
+            </div>
+            <div class="form-group col-4">
+              <label for="prenom">Prénom</label>
+              <input type="text"  [(ngModel)]="profil.firstName"  name="firstName" class="form-control" id="prenom" placeholder="">
+            </div>
+            <div class="form-group col-4">
+              <label for="alias">Alias</label>
+              <input type="text"  [(ngModel)]="profil.alias"  name="alias" class="form-control" id="alias" placeholder="">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="form-group col-6">
+              <label for="adresse">Adresse</label>
+              <input type="text" class="form-control" id="adresse" placeholder="">
+            </div>
+            <div class="form-group col-3">
+              <label for="cp">Code postal</label>
+              <input type="text" class="form-control" id="cp" placeholder="">
+            </div>
+            <div class="form-group col-3">
+              <label for="ville">Ville</label>
+              <input type="text" class="form-control" id="ville" placeholder="">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="form-group col-4">
+              <label for="date_naissance_declaree" class="">Date de naissance déclarée</label>
+              <input type="date" [(ngModel)]="profil.birthDate" name="birthDate" class="form-control" id="date_naissance_declaree" placeholder="">
+            </div>
+            <div class="form-group col-4">
+              <label for="date_naissance_confirmee" class="">Date de naissance confirmée</label>
+              <input type="date" [(ngModel)]="profil.birthDate" name="birthDate" class="form-control" id="date_naissance_confirmee" placeholder="">
+            </div>
+            <div class="form-group col-4">
+              <div class="form-group">
+                <label for="genre">Genre</label>
+                <select class="form-control" id="genre">
+                  <option disabled selected class="selectChoix" value="opt0">Choisissez...</option>
+                  <option></option>
+                  <option>Homme</option>
+                  <option>Femme</option>
+                  <option>Transgenre</option>
+                  <option>Autre</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="form-group col-4">
+              <label for="telephone">Téléphone</label>
+              <input type="text" [(ngModel)]="profil.tel" name="tel" class="form-control" id="telephone" placeholder="">
+            </div>
+            <div class="form-group col-8">
+              <label for="mail">Email</label>
+              <input type="email" [(ngModel)]="profil.email" name="email" class="form-control" id="mail" aria-describedby="emailHelp" placeholder="">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="form-group col-4">
+              <label for="compte_bancaire">Compte bancaire</label>
+              <select class="form-control" id="compte_bancaire">
+                <option disabled selected class="selectChoix" value="opt0">Choisissez...</option>
+                <option></option>
+                <option>Oui</option>
+                <option>Non</option>
+              </select>
+            </div>
+            <div class="form-group col-4">
+              <label for="ressources_ATA">Ressources ATA</label>
+              <select class="form-control" id="ressources_ATA">
+                <option disabled selected class="selectChoix" value="opt0">Choisissez...</option>
+                <option></option>
+                <option>Oui</option>
+                <option>Non</option>
+              </select>
+            </div>
+            <div class="form-group col-4">
+              <label for="debut_ATA">Date de début</label>
+              <input type="date" class="form-control" id="debut_ATA" placeholder="">
+            </div>
+          </div>
+          <div class="form-group row">
+           <div class="form-group col-4">
+              <label for="carte_navigo">Carte Navigo</label>
+              <select class="form-control" id="carte_navigo">
+                <option disabled selected class="selectChoix" value="opt0">Choisissez...</option>
+                <option></option>
+                <option>Oui</option>
+                <option>Non</option>
+              </select>
+            </div>
+            <div class="form-group col-8">
+              <label for="participation_financiere">Participation financière</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="participation_financière" placeholder="">
+                <div class="input-group-append">
+                  <div class="input-group-text">€ / mois</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="form-group col-4">
+              <label for="solidarite_transport">Solidarité transport</label>
+              <select class="form-control" id="solidarite_transport">
+                <option disabled selected class="selectChoix" value="opt0">Choisissez...</option>
+                <option></option>
+                <option>Oui</option>
+                <option>Non</option>
+              </select>
+            </div>
+            <div class="form-group col-8">
+              <label for="aide_financière">Aide financière</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="aide_financière" placeholder="">
+                <div class="input-group-append">
+                  <div class="input-group-text">€ / mois</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="form-group col-3">
+              <label for="situation_en_france">Situation en France</label>
+            </div>
+            <div class="form-group col-9">
+              <div class="row radioButtons">
+                <div class="custom-control custom-radio custom-control-inline col-3">
+                  <input class="custom-control-input" type="radio" name="situation_en_france" id="radio1">
+                  <label class="custom-control-label" for="radio1">Régulière</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline col-3">
+                  <input class="custom-control-input" type="radio" name="situation_en_france" id="radio2">
+                  <label class="custom-control-label" for="radio2">Irrégulière</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline col-6">
+                  <input class="custom-control-input" type="radio" name="situation_en_france" id="radio3">
+                  <label class="custom-control-label" for="radio3">En cours de régularisation</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="form-group col-5">
+              <label for="personne_a_prevenir">Personne à prévenir</label>
+              <input type="text" class="form-control" id="personne_a_prevenir" placeholder="">
+            </div>
+            <div class="form-group col-3">
+              <label for="lien_pers_a_prevenir">Lien de parenté</label>
+              <input type="text" class="form-control" id="lien_pers_a_prevenir" placeholder="">
+            </div>
+            <div class="form-group col-4">
+              <label for="tel_pers_a_prevenir">Téléphone</label>
+              <input type="text" class="form-control" id="tel_pers_a_prevenir" placeholder="">
+            </div>
+          </div>
+        </fieldset>
+      </section>
+
+      <section id="infosPerso" class="container">
+        <fieldset id="cadreInfosPerso">
+          <legend>Informations personnelles</legend>
+          <div class="form-group row">
+            <div class="form-group col-4">
+              <label for="paysOrigine">Pays d'origine </label>
+              <select class="form-control" id="paysOrigine">
+                <option disabled selected class="selectChoix" value="opt0">Choisissez...</option>
+                <option value="optNull"></option>
+                <option value="opt1">Nigeria</option>
+                <option value="opt2">France</option>
+                <option value="opt3">Thailande</option>
+              </select>
+            </div>
+            <div class="form-group col-4">
+              <label for="villeNaissance">Ne(e) a </label>
+              <input class="form-control" type="text" id="villeNaissance">
+            </div>
+            <div class="form-group col-4">
+              <label for="ethnie">Ethnie </label>
+              <input class="form-control" type="text" id="ethnie">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="form-group col-4">
+              <label for="nationalite">Nationalite </label>
+              <select class="form-control" id="nationalite">
+                <option disabled selected class="selectChoix" value="opt0">Choisissez...</option>
+                <option value="optNull"></option>
+                <option value="opt1">Nigeriane</option>
+                <option value="opt2">Francaise</option>
+                <option value="opt3">Thailandaise</option>
+              </select>
+            </div>
+            <div class="form-group col-4">
+              <label for="nationalite2">Nationalite 2 </label>
+              <select class="form-control" id="nationalite2">
+                <option disabled selected class="selectChoix" value="opt0">Choisissez...</option>
+                <option value="optNull"></option>
+                <option value="opt1">Nigeriane</option>
+                <option value="opt2">Francaise</option>
+                <option value="opt3">Thailandaise</option>
+              </select>
+            </div>
+            <div class="form-group col-4">
+              <label for="nationalite3">Nationalite 3 </label>
+              <select class="form-control" id="nationalite3">
+                <option disabled selected class="selectChoix" value="opt0">Choisissez...</option>
+                <option value="optNull"></option>
+                <option value="opt1">Nigeriane</option>
+                <option value="opt2">Francaise</option>
+                <option value="opt3">Thailandaise</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="form-group col-4">
+              <label for="minorite">Minorite </label>
+              <select class="form-control" id="minorite">
+                <option disabled selected class="selectChoix" value="opt0">Choisissez...</option>
+                <option value="optNull"></option>
+                <option value="opt1">Oui</option>
+                <option value="opt2">Non</option>
+              </select>
+            </div>
+            <div class="form-group col-4">
+              <label for="langue">Langue </label>
+              <select class="form-control" id="langue">
+                <option disabled selected class="selectChoix" value="opt0">Choisissez...</option>
+                <option value="optNull"></option>
+                <option value="opt1">Francais</option>
+                <option value="opt2">Anglais</option>
+                <option value="opt3">Thailandais</option>
+              </select>
+            </div>
+            <div class="form-group col-4">
+              <label for="situfamiliale">Situation familiale</label>
+              <select class="form-control" id="situfamiliale">
+                <option disabled selected class="selectChoix" value="opt0">Choisissez...</option>
+                <option value="optNull"></option>
+                <option value="opt1">Celibataire</option>
+                <option value="opt2">Marie</option>
+                <option value="opt3">Divorce</option>
+                <option value="opt1">En couple</option>
+                <option value="opt2">Concubinage</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group col-12">
+            <div class="form-group row">
+              <label for="contraintesAlim">Contraintes alimentaires </label>
+              <textarea class="form-control" id="contraintesAlim" rows="2"></textarea>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="form-group col-3">
+              <label for="nbEnfants">Nombre d'enfants</label>
+              <select class="custom-select" id="nbEnfants" (change)="onChangeNb" required>
+                <option selected value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+            <div class="form-group col-9">
+              <label for="localisationEnfants">Localisation des enfants</label>
+              <textarea class="form-control" id="localisationEnfants" rows="1"></textarea>
+            </div>
+          </div>
+        </fieldset>
+      </section>
+
+      <section id="infosExploitation" class="container">
+        <fieldset id="cadreInfosExploitation">
+          <legend>Informations sur l'exploitation</legend>
+          <div class="form-group row">
+            <div class="form-group col-6">
+              <label for="arrivee_france">Date d'arrivee en France</label>
+              <input type="date" class="form-control" id="arrivee_france" placeholder="">
+            </div>
+            <div class="form-group col-6">
+              <label for="temps_presence_france">Temps de presence en France </label>
+              <input class="form-control" type="text" id="temps_presence_france">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="form-group col-6">
+              <label for="exploitee_depuis">Exploitee depuis </label>
+              <input type="date" class="form-control" id="exploitee_depuis" placeholder="">
+            </div>
+            <div class="form-group col-6">
+              <label for="arrivee_foyer">Date d'arrivee au foyer </label>
+              <input type="date" class="form-control" id="arrivee_foyer" placeholder="">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="form-group col-4">
+              <label for="tjs_exploitee">Toujours exploitee </label>
+              <select class="form-control" id="tjs_exploitee">
+                <option disabled selected class="selectChoix" value="opt0">Choisissez...</option>
+                <option value="optNull"></option>
+                <option value="opt1">Oui</option>
+                <option value="opt2">Non</option>
+              </select>
+            </div>
+            <div class="form-group col-4">
+              <label for="grossesse_exploitation">Grossesse durant l'exploitation </label>
+              <select class="form-control" id="grossesse_exploitation">
+                <option disabled selected class="selectChoix" value="opt0">Choisissez...</option>
+                <option value="optNull"></option>
+                <option value="opt1">Oui</option>
+                <option value="opt2">Non</option>
+              </select>
+            </div>
+            <div class="form-group col-4">
+              <label for="mineure_exploitation">Mineure au debut de l'exploitation </label>
+              <select class="form-control" id="mineure_exploitation">
+                <option disabled selected class="selectChoix" value="opt0">Choisissez...</option>
+                <option value="optNull"></option>
+                <option value="opt1">Oui</option>
+                <option value="opt2">Non</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+      </section>
+
+      <section id="infosProjets" class="container">
+        <fieldset id="cadreInfosProjets">
+          <legend>Projets Perso et Pro</legend>
+
+            <div class="form-group row">
+              <div class="form-group col-4">
+                <label for="projperspro">Projet personnel et professionnel</label>
+              </div>
+              <div class="form-group col-8">
+                <input type="text" class="form-control" id="projperspro" placeholder="">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="form-group col-4">
+                <label for="planning">Planning</label>
+              </div>
+              <div class="form-group col-8">
+                <input type="text" class="form-control" id="planning" placeholder="">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="form-group col-4">
+                <label for="etape2">Etape {{numEtShow}}</label>
+              </div>
+              <div class="form-group col-8">
+                <input type="text" class="form-control" id="etape2" placeholder="">
+              </div>
+            </div>
+
+            <app-fiche-profil-etape class="com-repeat" *ngFor="let com of [0, 1, 2, 3, 4, 5, 6].slice(0, numEt)">
+            </app-fiche-profil-etape>
+
+            <div class="row">
+              <div class="col-11"></div>
+              <div class="col-1">
+                <button type="button" (click)="addEtape()" class="btn btn-outline-secondary btn-plus">
+                    <i class="fa fa-plus-circle"></i>
+                </button>
+              </div>
+            </div>
+        </fieldset>
+      </section>
+
+      <section id="infosContrats" class="container">
+          <fieldset id="cadreInfosContrats">
+            <legend>Contrats</legend>
+              <div class="form-group row divtableau">
+                <div class="form-group col-6 contratsCols">
+                  <label for="col1contrat">Contrats</label>
+                </div>
+                <div class="form-group col-3 contratsCols">
+                  <label for="col2contrat">Date de contrat</label>
+                </div>
+                <div class="form-group col-3 contratsCols">
+                  <label for="col3contrat">Echeance</label>
+                </div>
+              </div>
+
+              <div data-row-id="numCont" class="form-group row divtableau" #id>
+                <div class="form-group col-6 contratsCols">
+                  <input data-contrat="" type="text" class="form-control intitule_contrat" id="contrat2" placeholder="" #contrat>
+                </div>
+                <div class="form-group col-3 contratsCols">
+                  <input data-date-debut="" type="date" name="datecontrat2" id="datecontrat2" class="datepickNoBorder" #dateDebut>
+                </div>
+                <div class="form-group col-3 contratsCols">
+                  <input data-date-fin="" type="date" name="fincontrat2" id="fincontrat2" class="datepickNoBorder" #dateFin>
+                </div>
+            </div>
+
+              <app-fiche-profil-contrat class="com-repeat" *ngFor="let com of [0, 1, 2, 3, 4, 5, 6].slice(0, numCont)">
+                </app-fiche-profil-contrat>
+
+                <div class="row">
+                    <div class="col-11"></div>
+                    <div class="col-1">
+                      <button type="button" (click)="addContrat()" class="btn btn-outline-secondary btn-plus">
+                        <i class="fa fa-plus-circle"></i>
+                      </button>
+                    </div>
+              </div>
+          </fieldset>
+        </section>
+
+        <section id="infosAdmission" class="container">
+          <fieldset id="cadreInfosAdmission">
+            <legend>Admission</legend>
+            <div class="form-group row">
+              <div class="form-group col-4">
+                <label for="admiss">Admission</label>
+                <select class="form-control" id="admiss">
+                  <option disabled selected class="selectChoix" value="opt0">Choisissez...</option>
+                  <option></option>
+                  <option>Oui</option>
+                  <option>Non</option>
+                </select>
+              </div>
+              <div class="form-group col-4">
+                <label for="debut_admission" class="">Début</label>
+                <input type="date" class="form-control" id="debut_admission" placeholder="">
+              </div>
+              <div class="form-group col-4">
+                <label for="fin_admission" class="">Fin</label>
+                <input type="date" class="form-control" id="fin_admission" placeholder="">
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="form-group col-4">
+                <label for="real_entretien">Entretien realise par</label>
+                <select class="form-control" id="real_entretien">
+                  <option disabled selected class="selectChoix" value="opt0">Choisissez...</option>
+                  <option></option>
+                  <option>Junior</option>
+                  <option>Fry</option>
+                  <option>Julien</option>
+                  <option>Kal</option>
+                  <option>So</option>
+                  <option>Matthieu</option>
+                </select>
+              </div>
+              <div class="form-group col-4">
+                <label for="chambre">Chambre</label>
+                <input type="text" class="form-control" id="chambre" placeholder="">
+              </div>
+              <div class="form-group col-4">
+                <label for="type_adm">Type d'admission</label>
+                <input type="text" class="form-control" id="type_adm" placeholder="">
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="form-group col-4">
+                <label for="changer_tel">Besoin de changer de telephone</label>
+                <select class="form-control" id="changer_tel">
+                  <option disabled selected class="selectChoix" value="opt0">Choisissez...</option>
+                  <option></option>
+                  <option>Oui</option>
+                  <option>Non</option>
+                </select>
+              </div>
+              <div class="form-group col-4">
+                <label for="appels_ext">Appels exterieurs</label>
+                <select class="form-control" id="appels_ext">
+                  <option disabled selected class="selectChoix" value="opt0">Choisissez...</option>
+                  <option></option>
+                  <option>Oui</option>
+                  <option>Non</option>
+                </select>
+              </div>
+              <div class="form-group col-4">
+                <label for="utilisation_tel">Utilisation telephone</label>
+                <select class="form-control" id="utilisation_tel">
+                  <option disabled selected class="selectChoix" value="opt0">Choisissez...</option>
+                  <option></option>
+                  <option>Oui</option>
+                  <option>Non</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="form-group col-4">
+                <label for="sorties_ext">Sorties exterieures</label>
+                <select class="form-control" id="sorties_ext">
+                  <option disabled selected class="selectChoix" value="opt0">Choisissez...</option>
+                  <option></option>
+                  <option>Oui</option>
+                  <option>Non</option>
+                </select>
+              </div>
+              <div class="form-group col-4">
+                <label for="craintes">Craintes</label>
+                <select class="form-control" id="craintes">
+                  <option disabled selected class="selectChoix" value="opt0">Choisissez...</option>
+                  <option></option>
+                  <option>Oui</option>
+                  <option>Non</option>
+                </select>
+              </div>
+              <div class="form-group col-4">
+                <label for="interprete">Besoin d'un interprete</label>
+                <select class="form-control" id="interprete">
+                  <option disabled selected class="selectChoix" value="opt0">Choisissez...</option>
+                  <option></option>
+                  <option>Oui</option>
+                  <option>Non</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group row"> 
+              <div class="form-group col-6">
+                <label for="preconisations">Preconisations</label>
+                <textarea class="form-control" id="preconisations" placeholder="" rows="2"></textarea>
+              </div>
+              <div class="form-group col-6">
+                <label for="preconisations_nuit">Preconisations nuit</label>
+                <textarea class="form-control" id="preconisations_nuit" placeholder="" rows="2"></textarea>
+              </div>
+            </div>
+
+            <div class="form-group row"> 
+              <div class="form-group col-6">
+                <label for="observations">Observations</label>
+                <textarea class="form-control" id="observations" placeholder="" rows="2"></textarea>
+              </div>
+              <div class="form-group col-6">
+                <label for="autre">Autre</label>
+                <textarea class="form-control" id="autre" placeholder="" rows="2"></textarea>
+              </div>
+            </div>
+          </fieldset>
+        </section>
+        <div class="form-group row">
+            <div class="form-group col-7"></div>
+            <div class="form-group col-2">
+              <button type="button" class="btn btn-outline-secondary btn-historique">
+                <i class="fa fa-history">
+                  <span class="btn_uni">Historique</span>
+                </i>
+              </button>
+            </div>
+            <div class="form-group col-3">
+              <button type="button" class="btn btn-dark">
+                <i class="fa fa-download">
+                  <span class="btn_uni" (ngSubmit)="onSubmit()" >Sauvegarder</span>
+                </i>
+              </button>
+            </div>
+        </div>
+    </form>
+</div>

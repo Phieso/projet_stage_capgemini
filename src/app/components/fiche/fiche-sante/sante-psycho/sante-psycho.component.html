@@ -1,0 +1,83 @@
+<section class="sante-psy title">
+  <header class="row">
+      <h2>SANTE PSYCHOLOGIQUE</h2>
+  </header>
+</section>
+
+<form>
+    <section id="bilan-psycho" class="container">
+      <fieldset id="bilan_psycho">
+        <legend>Bilan psychologique</legend>
+  
+        <div class="form-group row">
+          <div class="form-group col-md-12">
+            <label for="suivi_psycho_externe">Suivi psychologique externe</label>
+            <input type="text" class="form-control" id="suivi_psycho_externe" placeholder="">
+          </div>
+        </div>
+  
+        <div class="form-group row">
+          <div class="form-group col-md-12">
+            <label for="suivi_psycho_interne">Suivi psychologique interne</label>
+            <input type="text" class="form-control" id="suivi_psycho_interne" placeholder="">
+          </div>
+        </div>
+  
+        <div class="form-group row">
+        <div class="form-group col-md-12">
+          <label for="etat_psycho">Informations état psychologique</label>
+          <textarea class="form-control" id="etat_psycho" rows="3"></textarea>
+        </div>
+      </div>
+      
+       <div class="form-group row">
+          <div class="form-group col-md-12">
+            <label for="autre">Autre</label>
+            <input type="text" class="form-control" id="autre" placeholder="">
+          </div>
+        </div>
+  
+      </fieldset>
+    </section>
+  </form>
+
+  <form>
+      <section id="suivi-psycho" class="container">
+        <fieldset id="suivi_psycho">
+          <legend>Suivi psychologique</legend>
+    
+          <table class="row sante-psy-form-suivi">
+            <tr class="table-headers">
+                <th>Date</th>
+                <th>Responsable</th>
+                <th>Commentaires</th>
+            </tr>
+            
+             <tr data-row-id="num" class="table-content" #id>
+                 <td>
+                    <input data-date="" class="form-control" type="date" name="sante-psy-suivi-date" id="sante-psy-suivi-date" #date>
+                 </td>
+                 <td>
+                     <input data-resp="" class="form-control" type="text" name="sante-psy-suivi-responsable" id="sante-psy-suivi-responsable" [(ngModel)]="respo" #resp>
+                 </td>
+                 <td>
+                     <textarea class="form-control" name="sante-psy-suivi-commentaires" id="sante-psy-suivi-commentaires" cols="50" rows="1" placeholder="{{respo}}" #com></textarea>
+                 </td>
+             </tr>
+            
+            <app-fiche-sante-commentaire class="com-repeat" *ngFor="let com of maxLinesPsyMeeting.slice(0, num)">
+            </app-fiche-sante-commentaire>
+        </table>
+            
+              <div class="row">
+                  <div class="col-md-11"></div>
+                  <div class="col-md-1 d-flex justify-content-end">
+                      <button type="button" (click)="addRow()" class="btn btn-outline-secondary btn-plus">
+                          <i class="fa fa-plus-circle"></i>
+                      </button>
+                  </div>
+              </div>
+    
+        </fieldset>
+      </section>
+    </form>

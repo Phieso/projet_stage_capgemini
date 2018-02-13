@@ -1,0 +1,108 @@
+<div class="container">
+    <section class="admission-ouverture">
+        <header>
+            <h3>Ouverture de droits</h3>
+        </header>
+
+        <form action="" method="post" class="admission-ouverture-form">
+            <div class="row admission-ouverture-form-ame">
+                <fieldset>
+
+                    <legend>Couverture médicale AME</legend>
+
+                    <section class="ame-oui col">
+                        <input type="radio" name="ame" id="ame-oui" value="true">
+                        <label for="ame-oui">Oui</label>
+                        <br>
+                        <label for="ame-droits">Droits en cours :</label>
+                        <label for="ame-debut">Début des droits :</label>
+                        <input type="date" name="ame-debut" id="ame-debut">
+                        <br>
+                        <label for="fin">Fin des droits :</label>
+                        <input type="date" name="ame-fin" id="ame-fin">
+                    </section>
+
+                    <section class="ame-non col">
+                        <input type="radio" name="ame" id="ame-non" value="false">
+                        <label for="ame-non">non</label>
+                        <br>
+                        <input type="checkbox" name="ame-premiere" id="ame-premiere" value="ame-premiere">
+                        <label for="ame-premiere">Première demande :</label>
+                        <label for="ame-premiere-date">Dépot dossier le :</label>
+                        <input type="date" name="ame-premiere-date" id="ame-premiere-date">
+                        <br>
+                        <input type="checkbox" name="ame-renouvellement" id="ame-renouvellement" value="ame-renouvellement">
+                        <label for="ame-renouvellement">Renouvellement :</label>
+                        <label for="ame-renouvellement">Dépot dossier le :</label>
+                        <input type="date" name="ame-renouvellement-date" id="ame-renouvellement-date">
+                    </section>
+
+                </fieldset>
+            </div>
+
+            <div class="row admission-ouverture-form-cmu">
+                <fieldset>
+
+                    <legend>Couverture médicale CMU</legend>
+
+                    <section class="cmu-oui col">
+                        <input type="radio" name="cmu" id="cmu-oui" value="true">
+                        <label for="cmu-oui">Oui</label>
+                        <br>
+                        <label for="cmu-droits">Droits en cours :</label>
+                        <label for="cmu-debut">Début des droits :</label>
+                        <input type="date" name="cmu-debut" id="cmu-debut">
+                        <br>
+                        <label for="fin">Fin des droits :</label>
+                        <input type="date" name="cmu-fin" id="cmu-fin">
+                    </section>
+
+                    <section class="cmu-non col">
+                        <input type="radio" name="cmu" id="cmu-non" value="false">
+                        <label for="cmu-non">Non</label>
+                        <br>
+                        <input type="checkbox" name="cmu-premiere" id="cmu-premiere" value="cmu-premiere">
+                        <label for="cmu-premiere">Première demande :</label>
+                        <label for="cmu-premiere-date">Dépot dossier le :</label>
+                        <input type="date" name="cmu-premiere-date" id="cmu-premiere-date">
+                        <br>
+                        <input type="checkbox" name="cmu-renouvellement" id="cmu-renouvellement" value="cmu-renouvellement">
+                        <label for="cmu-renouvellement">Renouvellement :</label>
+                        <label for="cmu-renouvellement">Dépot dossier le :</label>
+                        <input type="date" name="cmu-renouvellement-date" id="cmu-renouvellement-date">
+                    </section>
+
+                </fieldset>
+            </div>
+
+            <div class="row admission-ouverture-form-logement">
+                <fieldset>
+                    <legend>Recherche de logement</legend>
+
+                    <section class="logement-oui col">
+                        <input type="radio" name="logement" id="logement-oui" value="true">
+                        <label for="logement-oui">Oui</label>
+                        <br>
+                        <fieldset>
+                            <legend>Demande de SIAO</legend>
+
+                            <input type="radio" name="siao" id="siao-oui" value="true">
+                            <label for="siao-oui">Oui</label>
+                            <label for="siao">Dépot dossier le :</label>
+                            <input type="date" name="siao-date" id="siao-date">
+                            <br>
+
+                            <input type="radio" name="siao" id="siao-non" value="false">
+                            <label for="siao-non">Non</label>
+                        </fieldset>
+                    </section>
+
+                    <section class="logement-non col">
+                        <input type="radio" name="logement" id="logement-non" value="false">
+                        <label for="logement-non">Non</label>
+                    </section>
+                </fieldset>
+            </div>
+        </form>
+    </section>
+</div>

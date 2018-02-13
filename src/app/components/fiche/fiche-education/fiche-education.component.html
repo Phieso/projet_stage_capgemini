@@ -1,0 +1,96 @@
+<div class="container form-group">
+    <section class="education title">
+        <header class="row">
+            <h2>EDUCATION</h2>
+        </header>
+    </section>
+
+    <form action="" method="post" class="education-form">
+
+        <section class="container education-form-bilan">
+                <fieldset>
+                    <legend>Bilan éducatif</legend>
+                    
+                    <div class="row col">
+                        <label for="formation">Formation / Insertion Professionnelle : </label>
+                        <input [(ngModel)]="education.form_insert" class="form-control" type="text" name="formation" id="formation">
+                    </div>
+                    <div class="row">
+                       <div class="col">
+                            <label for="formation">Budget : </label>
+                            <input [(ngModel)]="education.budget" class="form-control" type="text" name="budget" id="budget">
+                       </div>
+                       <div class="col">
+                            <label for="formation">Logement : </label>
+                            <input [(ngModel)]="education.logement" class="form-control" type="text" name="logement" id="logement">
+                       </div>
+                    </div>
+                    <div class="row col">
+                        <label for="formation">Activités / Loisir Extérieurs : </label>
+                        <input [(ngModel)]="education.act_ext" class="form-control" type="text" name="activites" id="activites">
+                    </div>
+                    <div class="row col">
+                        <label for="formation">Autre : </label>
+                        <input [(ngModel)]="education.autre" class="form-control" type="text" name="education-bilan-autres" id="education-bilan-autres">
+                    </div>
+               </fieldset>
+        </section>
+
+        <section class="container education-form-suivi">
+               <fieldset>
+                   <legend>Suivi</legend>
+                   <table class="row education-form-suivi">
+                       <tr class="table-headers">
+                           <th>Date</th>
+                           <th>Responsable</th>
+                           <th>Commentaires</th>
+                       </tr>
+                       
+                        <tr data-row-id="num" class="table-content" #id>
+                            <td>
+                               <input data-date="" class="form-control" type="date" name="juridique-suivi-date" id="juridique-suivi-date" #date>
+                            </td>
+                            <td>
+                                <input data-resp="" class="form-control" type="text" name="juridique-suivi-responsable" id="juridique-suivi-responsable" [(ngModel)]="respo" #resp>
+                            </td>
+                            <td>
+                                <textarea class="form-control" name="juridique-suivi-commentaires" id="juridique-suivi-commentaires" cols="50" rows="1" placeholder="{{respo}}" #com></textarea>
+                            </td>
+                        </tr>
+                       
+                       <app-fiche-education-commentaire class="com-repeat" *ngFor="let com of [0, 1, 2, 3, 4, 5, 6].slice(0, num)">
+                       </app-fiche-education-commentaire>
+                   </table>
+
+                   <div class="row">
+                        <div class="col-11"></div>
+                        <div class="col-1 d-flex justify-content-end">
+                            <button type="button" (click)="addRow()" class="btn btn-outline-secondary btn-plus">
+                                <i class="fa fa-plus-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+               </fieldset>
+        </section>
+
+    </form>
+
+</div>
+<div class="form-group row">
+    <div class="form-group col-7"></div>
+    <div class="form-group col-2">
+        <button type="button" class="btn btn-outline-secondary btn-historique">
+        <i class="fa fa-history">
+            <span class="btn_uni">Historique</span>
+        </i>
+        </button>
+    </div>
+    <div class="form-group col-3">
+      <button (click)="onSubmit()" type="button" class="btn btn-dark">
+        <i class="fa fa-download">
+            <span class="btn_uni">Sauvegarder</span>
+        </i>
+      </button>
+        
+    </div>
+</div>

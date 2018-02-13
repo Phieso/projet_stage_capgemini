@@ -1,0 +1,150 @@
+<div class="container form-group">
+    <section class="juridique title">
+        <header class="row">
+            <h2>JURIDIQUE</h2>
+        </header>
+    </section>
+
+    <form action="" method="post" class="juridique-form" *ngIf="dataLoaded">
+
+        <section class="container juridique-form-bilan">
+                <fieldset>
+                    <legend>Bilan juridique</legend>
+                    
+                    <div class="row col-4">
+                        <label class="" for="plainte">Plainte : </label>
+                        <select [(ngModel)]="juridique.plainte" [(ngModel)]="show" class="form-control " name="plainte" id="plainte">
+                            <option value="" selected></option>
+                            <option value="true">Oui</option>
+                            <option value="false">Non</option>
+                        </select>
+                    </div>
+                    
+                    <section class="row plainte-suite" *ngIf="show === 'true'">
+                        <div class="col-4">
+                            <label class="" for="avocat">Avocat : </label>
+                            <select [(ngModel)]="juridique.avocat" class="form-control" name="avocat" [(ngModel)]="showAv" id="avocat">
+                                <option value="" selected></option>
+                                <option value="true">Oui</option>
+                                <option value="false">Non</option>
+                            </select>
+                        </div>
+                        
+                        <section class="col-12 row avocat-donnees" *ngIf="showAv === 'true'">
+                            <fieldset>
+                            <legend>Avocat :</legend>
+                            <div class="row">
+                               <div class="col">
+                                    <label for="avocat-nom">Nom : </label>
+                                    <input [(ngModel)]="juridique.av_lname" class="form-control" type="text" name="avocat-nom" id="avocat-nom">
+                               </div>
+                               <div class="col">
+                                    <label for="avocat-prenom">Prénom : </label>
+                                    <input [(ngModel)]="juridique.av_fname" class="form-control" type="text" name="avocat-prenom" id="avocat-prenom">
+                               </div>
+                            </div>
+
+                            <div class="row">
+                               <div class="col">
+                                    <label for="avocat-adresse">Adresse : </label>
+                                    <input [(ngModel)]="juridique.av_adresse" class="form-control" type="text" name="avocat-adresse" id="avocat-adresse">
+                               </div>
+                               <div class="col">
+                                    <label for="avocat-cp">CP : </label>
+                                    <input [(ngModel)]="juridique.av_cp" class="form-control" type="text" name="avocat-cp" id="avocat-cp">
+                               </div>
+                               <div class="col">
+                                    <label for="avocat-ville">Ville : </label>
+                                    <input [(ngModel)]="juridique.av_ville" class="form-control" type="text" name="avocat-ville" id="avocat-ville">
+                               </div>
+                            </div>
+
+                            <div class="row">
+                               <div class="col">
+                                    <label for="avocat-tel">Téléphone : </label>
+                                    <input [(ngModel)]="juridique.av_tel" class="form-control" type="text" name="avocat-tel" id="avocat-tel">
+                               </div>
+                               <div class="col">
+                                    <label for="avocat-mail">Mail : </label>
+                                    <input [(ngModel)]="juridique.av_mail" class="form-control" type="text" name="avocat-mail" id="avocat-mail">
+                               </div>
+                            </div>
+                            </fieldset>
+                        </section>
+
+                        <div class="row col-12">
+                            <div class="col-4">
+                                <label for="aide">Aide juridictionnelle : </label>
+                                <input [(ngModel)]="juridique.aide_jurid" class="form-control" type="text" name="aide" id="aide">
+                            </div>
+                            <div class="col-4">
+                                <label for="reference">Référence instruction : </label>
+                                <input [(ngModel)]="juridique.ref_instruc" class="form-control" type="text" name="reference" id="reference">
+                            </div>
+                            <div class="col-4">
+                                <label for="formation">Autre : </label>
+                                <input [(ngModel)]="juridique.autre" class="form-control" type="text" name="juridique-bilan-autres" id="juridique-bilan-autres">
+                            </div>
+                        </div>
+                    </section>
+               </fieldset>
+        </section>
+
+        <section class="container juridique-form-suivi">
+               <fieldset>
+                   <legend>Suivi</legend>
+                   <table class="row juridique-form-suivi">
+                       <tr class="table-headers">
+                           <th>Date</th>
+                           <th>Responsable</th>
+                           <th>Commentaires</th>
+                       </tr>
+                       
+                       <tr data-row-id="num" class="table-content" #id>
+                            <td>
+                               <input data-date="" class="form-control" type="date" name="juridique-suivi-date" id="juridique-suivi-date" #date>
+                            </td>
+                            <td>
+                                <input data-resp="" class="form-control" type="text" name="juridique-suivi-responsable" id="juridique-suivi-responsable" [(ngModel)]="respo" #resp>
+                            </td>
+                            <td>
+                                <textarea class="form-control" name="juridique-suivi-commentaires" id="juridique-suivi-commentaires" cols="50" rows="1" placeholder="{{respo}}" #com></textarea>
+                            </td>
+                       </tr>
+                       
+                       <app-fiche-juridique-commentaire class="com-repeat" *ngFor="let com of [0, 1, 2, 3, 4, 5, 6].slice(0, num)">
+                       </app-fiche-juridique-commentaire>
+                   </table>
+
+                    <div class="row">
+                        <div class="col-11"></div>
+                        <div class="col-1 d-flex justify-content-end">
+                            <button type="button" (click)="addRow()" class="btn btn-outline-secondary btn-plus">
+                                <i class="fa fa-plus-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+               </fieldset>
+        </section>
+
+    </form>
+
+</div>
+
+<div class="form-group row">
+    <div class="form-group col-7"></div>
+    <div class="form-group col-2">
+        <button type="button" class="btn btn-outline-secondary btn-historique">
+        <i class="fa fa-history">
+            <span class="btn_uni">Historique</span>
+        </i>
+        </button>
+    </div>
+    <div class="form-group col-3">
+      <button type="button" (click)="onSubmit()" class="btn btn-dark">
+        <i class="fa fa-download">
+            <span class="btn_uni">Sauvegarder</span>
+        </i>
+      </button>
+    </div>
+</div>

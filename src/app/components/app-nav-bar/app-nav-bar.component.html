@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+<div class="container">
+  <span class="navbar-brand col-2" [routerLink]="['home']" ><img src="../../assets/img/logo.jpg" alt="logo_AFJ" id="logonav"> Foyer AFJ</span>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <search id="searchbar" class="col-6"></search>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul *ngIf="isAuthenticated()" class="navbar-nav ml-auto">
+      <li class="nav-item"></li>
+      <li class="nav-item active" (click)="createNewFiche()"><span class="nav-link">Créer une nouvelle fiche</span></li>
+      <li class="nav-item"><span (click)="logout()" class="nav-link">Logout</span></li>
+    </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,74 @@
+<div class=container>
+  <div class="form-group row">
+    <label for="nom" class="col-1 col-form-label">Nom</label>
+    <div class="col-3">
+      <input class="form-control" type="text" value="" id="nom">
+    </div>
+    <label for="prenom" class="col-1 col-form-label">Prénom</label>
+    <div class="col-3">
+      <input class="form-control" type="text" value="" id="prenom">
+    </div>
+    <label for="alias" class="col-1 col-form-label">Alias</label>
+    <div class="col-3">
+      <input class="form-control" type="text" value="" id="alias">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="adresse" class="col-1 col-form-label">Adresse</label>
+    <textarea class="form-control" id="adresse" class="col-4" rows="3"></textarea>
+    <label for="cp" class="col-2 col-form-label">Code postal</label>
+    <div class="col-2">
+      <input class="form-control" type="text" value="" id="cp">
+    </div>
+    <label for="ville" class="col-1 col-form-label">Ville</label>
+    <div class="col-2">
+      <input class="form-control" type="text" value="" id="ville">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="date-de-naissance-declaree" class="col-2 col-form-label">Date de naissance déclarée</label>
+    <form class="form-inline" class="col-2 col-form-label">
+      <div class="form-group">
+        <div class="input-group">
+          <input class="form-control" placeholder="yyyy-mm-dd"
+                 name="drop" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+              <img src="assets/calendar.png" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+   
+    <label for="date-de-naissance-confirmee" class="col-2 col-form-label">Date de naissance confirmée</label>
+    <form class="form-inline" class="col-2 col-form-label">
+      <div class="form-group">
+        <div class="input-group">
+          <input class="form-control" placeholder="yyyy-mm-dd"
+                 name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+              <img src="assets/calendar.png" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div class="form-group col-4 col-form-label">
+      <label for="exampleFormControlSelect1">Sexe</label>
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>Homme</option>
+        <option>Femme</option>
+        <option>Transgenre</option>
+        <option>Autre</option>
+      </select>
+    </div>
+  </div>
+
+
+</div>
+

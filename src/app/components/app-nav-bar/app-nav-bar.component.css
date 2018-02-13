@@ -1,0 +1,10 @@
+#logonav {
+    width: 45px;
+    height: 45px;
+}
+#searchbar {
+    padding-top: 15px;
+}
+.container {
+    display: flex;
+}

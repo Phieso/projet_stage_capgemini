@@ -1,0 +1,56 @@
+.container{
+    justify-content: center;
+    margin-top: 2.2em;
+}
+
+fieldset {
+    padding: 15px 60px;
+    padding-bottom: 2rem;
+    margin: 0 40px;
+    border: 2px solid #757474;
+    border-radius: 0.4em;   
+}
+
+fieldset fieldset {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    fieldset {
+        padding: 15px 10px;
+    }
+}
+
+legend {
+    width: auto;
+    text-align: left;
+    margin: 0 1em;
+    padding: 0 1em;
+    color: #383838;
+}
+
+div {
+    margin-bottom: 0px;
+}
+
+label{
+    margin: 10px 0px 2px 0px;
+}
+
+.selectChoix{
+    font-style: italic;
+    color: #555;
+}
+
+select, input, textarea {
+    margin: 0 auto;
+}
+
+.btn {
+    border-radius: 100%;
+}
+
+hr {
+    border-top: solid 1px darkgrey;
+}

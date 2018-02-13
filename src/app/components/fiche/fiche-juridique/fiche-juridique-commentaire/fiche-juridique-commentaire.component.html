@@ -1,0 +1,11 @@
+<tr data-row-id="num" class="table-content" #id>
+    <td>
+       <input data-date="" class="form-control" type="date" name="juridique-suivi-date" id="juridique-suivi-date" #date>
+    </td>
+    <td>
+        <input data-resp="" class="form-control" type="text" name="juridique-suivi-responsable" id="juridique-suivi-responsable" [(ngModel)]="respo" #resp>
+    </td>
+    <td>
+        <textarea class="form-control" name="juridique-suivi-commentaires" id="juridique-suivi-commentaires" cols="50" rows="1" placeholder="{{respo}}" #com></textarea>
+    </td>
+</tr>

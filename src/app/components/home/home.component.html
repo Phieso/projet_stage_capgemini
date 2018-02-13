@@ -1,0 +1,31 @@
+
+<div class="container">
+
+<!-- <search></search> -->
+
+<table class="table">
+    
+  <thead>
+    <tr>
+      <!-- <th>#</th> -->
+      <th id="col1">Nom</th>
+      <th id="col2">Prénom</th>
+      <th id="col3">N˚ ID</th>
+      <th id="col4">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let fiche of fiches; index as i; trackBy: trackByFn" (click)="goToEditFiche(fiche.id)"  class=" btn-outline-secondary">
+        <!-- <td>{{i+1}}</td> -->
+        <td>{{fiche.firstName}}</td>
+        <td>{{fiche.lastName}}</td>
+        <td>{{fiche.id}}</td>
+        <td>
+          <span class="btn btn-outline-warning">Modifier</span>
+          <span class="btn btn-outline-danger">Supprimer</span>
+        </td>
+      </tr>
+  </tbody>
+  </table>
+
+</div>

@@ -1,0 +1,72 @@
+.containerHeight {
+    height: 250px;
+}
+
+#date{
+    padding-top: 29px;
+    
+}
+
+#name{
+    padding-left: 20px;
+}
+
+#img_profil {
+    font-size: 10em;
+    border-radius: 5px;
+}
+
+#img{
+    padding-bottom: 10px;
+}
+
+#btn_photo {
+    padding: 0px;
+    width: 200px;
+    height: 200px;
+    z-index: 1;
+    position: relative;
+    border-radius: 7px;
+}
+
+div.contain {
+    padding: 15px 40px;
+}
+
+.form-group.col-12 {
+    margin-bottom : 2px;
+}
+
+#date{
+    padding-top:6px;
+}
+
+.row {
+    border: none;
+    margin-bottom: 15px;
+}
+
+#pencil {
+    z-index: 10;
+    position: absolute;
+    right: 15px;
+}
+
+#btn_photo #pencil {
+    visibility: hidden;
+}
+
+#btn_photo:hover #pencil {
+    visibility: visible;
+}
+
+.input-group-text {
+    background-color: white;
+    font-weight: bold;
+    border: none;
+}
+
+.form-control {
+    border: none;
+    pointer-events: none;
+}
